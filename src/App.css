@@ -1,6 +1,24 @@
 * {
   box-sizing: content-box;
   font-family: Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  overflow: hidden;
+}
+
+.pokedex-logo-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokedex-logo-container img {
+  width: 40vw;
+  margin: 1.25rem;
 }
 
 .main-container {
@@ -9,9 +27,26 @@
   align-items: center;
 }
 
-button {
+table {
+  display: flex;
+  flex-flow: column nowrap;
+  text-align: center;
+}
+
+table button {
   margin: 5px 10px;
   border: 2px solid black;
+  height: 1.5rem;
+  width: 9rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button {
+  text-transform: capitalize;
+  margin: 5px 10px;
+  border: 1px solid black;
   height: 1.5rem;
   width: 7rem;
   font-size: 1rem;
@@ -28,15 +63,68 @@ button:hover {
   justify-content: center;
 }
 
-thead {
-  text-align: center;
-  font-size: 1.25rem;
-  background-color: black;
-  color: white;
-}
-
 td {
   text-transform: capitalize;
   border: 1px solid black;
   padding: 1rem;
+  width: 210px;
+  border-radius: 8px;
+}
+
+.pokemon-card img {
+  margin: 10px;
+  max-width: 150px;
+  height: auto;
+}
+
+.type-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+}
+
+h4 {
+  color: white;
+  font-size: 0.9rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+  margin: 20px 2.5px 15px 2.5px;
+}
+
+h5 {
+  text-align: left;
+}
+
+.grass {
+  background-color: rgb(0, 179, 0);
+}
+
+.poison {
+  background-color: rgb(97, 97, 97);
+}
+
+.fire {
+  background-color: rgb(244, 16, 16);
+}
+
+.flying {
+  color: black;
+  background-color: rgb(244, 240, 196);
+}
+
+.water {
+  color: white;
+  background-color: rgb(40, 170, 222);
+}
+
+.bug {
+  background-color: rgb(25, 134, 39);
+}
+
+.normal {
+  color: black;
+  background-color: rgb(223, 213, 213);
 }

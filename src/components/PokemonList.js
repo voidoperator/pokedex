@@ -2,24 +2,31 @@ import React from 'react';
 import PokemonListItem from './PokemonListItem';
 
 class PokemonList extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      pokemonOpen: '',
+    };
+  }
+
+  handleCard = (pokemonName) => {
+    this.setState({ pokemonOpen: pokemonName });
+  };
+
   render() {
+    console.log();
     return (
       <div className="main-container">
-        <h1>Pokedex</h1>
         <table>
-          <thead>
-            <tr>
-              <td>Name</td>
-            </tr>
-          </thead>
           <tbody>
             {this.props.pokeList.map((pokemon) => {
-              const pokeName = pokemon.name;
               return (
                 <PokemonListItem
                   key={pokemon.name}
-                  name={pokeName.toUpperCase()}
+                  name={pokemon.name}
                   url={pokemon.url}
+                  isOpen={this.state.pokemonOpen === pokemon.name}
+                  setOpen={this.handleCard}
                 />
               );
             })}

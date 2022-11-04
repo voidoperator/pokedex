@@ -1,6 +1,7 @@
 import React from 'react';
 import PokemonList from './components/PokemonList';
 import './App.css';
+import PokedexLogo from './assets/pokedex.jpg';
 
 class Pokedex extends React.Component {
   constructor() {
@@ -36,6 +37,7 @@ class Pokedex extends React.Component {
       this.fetchPokemon();
     }
   }
+
   handlePrev = () => {
     let currentOffset = this.state.offset;
     if (currentOffset > 0) {
@@ -54,6 +56,11 @@ class Pokedex extends React.Component {
     return (
       <>
         {this.state.isLoading && <h1>Loading...</h1>}
+        {!this.state.isLoading && (
+          <div className="pokedex-logo-container">
+            <img src={PokedexLogo} alt="Pokedex Logo" title="Pokedex" />
+          </div>
+        )}
         <PokemonList pokeList={this.state.pokeList} />
         <div className="pagination-btn">
           {!this.state.offset || (
